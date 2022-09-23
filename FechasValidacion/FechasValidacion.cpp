@@ -11,6 +11,7 @@ int main(){
         system("cls");
         cout << "Digite la fecha: ";
         cin >> date;
+        system("cls");
         Date* d = new Date(date);
         d->valInput();
 

@@ -111,10 +111,97 @@ bool Date::isNumber(string n){
 }
 
 void Date::validate(){
-	int year, month, day;
-	year = getYear();
-	month = getMonth();
-	day = getDay();
-	//system("cls");
-	//cout << year << "/" << month << "/" << day << endl;
+	int year = valYear(), month = valMonth();
+	bool l_year;
+	if (month == 0 || year == 0) {
+		cout << "Fecha invalida." << endl;
+	}
+	else {
+		l_year = leap_year(year);
+		if (valDay(l_year, month) == true) {
+			cout << "Fecha valida." << endl;
+		}
+		else {
+			cout << "Fecha invalida." << endl;
+		}
+	}
+}
+
+int Date::valYear(){
+	int year = getYear();
+	if (year == 0) {
+		return 0;
+	}
+	else {
+		return year;
+	}
+}
+
+bool Date::leap_year(int _y){
+	int year = _y;
+	bool leap_year = false;
+
+	if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+		leap_year = true;
+	}
+	else {
+		leap_year = false;
+	}
+	return leap_year;
+}
+
+int Date::valMonth() {
+	int month = getMonth();
+	if (month >= 1 && month <= 12) {
+		return month;
+	}
+	else {
+		return 0;
+	}
+}
+
+bool Date::valDay(bool y, int m){
+	int month = m, day = getDay();
+	bool ly = y, validation = false;
+
+	switch (month){
+	case 1:
+	case 3:
+	case 5:
+	case 7:
+	case 8:
+	case 10:
+	case 12:
+		if (day >= 1 && day <= 31) {
+			validation = true;
+		}else validation = false;
+		break;
+
+	case 4:
+	case 6:
+	case 9:
+	case 11:
+		if (day >= 1 && day <= 30) {
+			validation = true;
+		}
+		else validation = false;
+		break;
+	
+	case 2:
+		if (ly == true) {
+			if (day >= 1 && day <= 29) {
+				validation = true;
+			}
+			else validation = false;
+		}
+		else {
+			if (day >= 1 && day <= 28) {
+				validation = true;
+			}
+			else validation = false;
+		}
+		break;
+	}
+
+	return validation;
 }

@@ -25,4 +25,8 @@ public:
 	void DaytoInt(string day);
 	bool isNumber(string n);
 	void validate();
+	int valYear();
+	bool leap_year(int _y);
+	int valMonth();
+	bool valDay(bool y, int m);
 };
