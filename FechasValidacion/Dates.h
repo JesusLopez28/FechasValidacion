@@ -16,8 +16,6 @@ public:
 	int getYear();
 	int getMonth();
 	int getDay();
-
-
 	void valInput();
 	void separate(string date);
 	void YeartoInt(string year);
