@@ -37,7 +37,7 @@ int Date::getDay(){
 
 void Date::valInput(){
 	string input = getDate();
-	int size = input.size(), i;
+	int size = input.size();
 	if (size == 10) {
 		separate(input);
 	}

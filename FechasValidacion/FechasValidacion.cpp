@@ -23,6 +23,7 @@ int main(){
         cout << "0.-No" << endl;
         cout << "Elige una opcion: ";
         cin >> opc;
+        delete d;
     }
     system("cls");
     cout << "Gracias por usar el programa. FIN" << endl;
