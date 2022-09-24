@@ -42,7 +42,7 @@ void Date::valInput(){
 		separate(input);
 	}
 	else {
-		cout << "Fecha invalida." << endl;
+		cout << "Entrada invalida, deben ser solo 10 caracteres AAAA/MM/DD." << endl;
 	}
 }
 
@@ -75,7 +75,8 @@ void Date::YeartoInt(string year){
 		setYear(int_year);
 	}
 	else {
-		cout << "Fecha invalida." << endl;
+		setYear(NULL);
+		cout << "Anio invalido." << endl;
 	}
 }
 
@@ -87,7 +88,7 @@ void Date::MonthtoInt(string month){
 		setMonth(int_month);
 	}
 	else {
-		cout << "Fecha invalida." << endl;
+		cout << "Mes invalido." << endl;
 	}
 }
 
@@ -99,7 +100,7 @@ void Date::DaytoInt(string day){
 		setDay(int_day);
 	}
 	else {
-		cout << "Fecha invalida." << endl;
+		cout << "Dia invalido." << endl;
 	}
 }
 
@@ -114,7 +115,7 @@ void Date::validate(){
 	int year = valYear(), month = valMonth();
 	bool l_year;
 	if (month == 0 || year == 0) {
-		cout << "Fecha invalida." << endl;
+		cout << "Mes o anio invalidos." << endl;
 	}
 	else {
 		l_year = leap_year(year);

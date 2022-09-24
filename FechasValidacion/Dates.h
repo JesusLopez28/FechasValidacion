@@ -1,12 +1,14 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <sstream>
 using namespace std;
 
 class Date {
 private:
 	string date;
 	unsigned int year, month, day;
+	string dateInString;
 public:
 	Date(string);
 	string getDate();
@@ -27,4 +29,11 @@ public:
 	bool leap_year(int _y);
 	int valMonth();
 	bool valDay(bool y, int m);
+
+	operator const char* () {
+		ostringstream formattedDate;
+		formattedDate << month << "-" << day << "-" << year;
+		dateInString = formattedDate.str();
+		return dateInString.c_str();
+	}
 };

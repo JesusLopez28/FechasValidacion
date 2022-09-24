@@ -14,6 +14,7 @@ int main(){
         system("cls");
         Date* d = new Date(date);
         d->valInput();
+        cout << *d << endl;
 
         system("pause");
         system("cls");
