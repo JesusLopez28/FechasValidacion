@@ -12,9 +12,13 @@ int main(){
         cout << "Digite la fecha: ";
         cin >> date;
         system("cls");
-        Date* d = new Date(date);
-        d->valInput();
-        cout << *d << endl;
+        Date d(date);
+        d.valInput();
+        cout << endl << endl << endl;
+        cout << d << endl << endl << endl;
+        ++d;
+        cout << d << endl << endl << endl;
+
 
         system("pause");
         system("cls");
@@ -24,7 +28,6 @@ int main(){
         cout << "0.-No" << endl;
         cout << "Elige una opcion: ";
         cin >> opc;
-        delete d;
     }
     system("cls");
     cout << "Gracias por usar el programa. FIN" << endl;
