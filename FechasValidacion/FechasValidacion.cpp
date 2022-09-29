@@ -11,15 +11,20 @@ int main(){
         system("cls");
         cout << "Digite la fecha: ";
         cin >> date;
+        cout << endl << endl << endl;
         system("cls");
         Date d(date);
         d.valInput();
-        cout << endl << endl << endl;
+        
         cout << d << endl << endl << endl;
-        ++d;
-        cout << d << endl << endl << endl;
-
-
+        if (d.validate() == true) {
+            cout << "Fecha valida." << endl;
+            cout << ++d << endl << endl << endl;
+        }
+        else {
+            cout << "Fecha invalida." << endl << endl << endl;
+        }
+        
         system("pause");
         system("cls");
 

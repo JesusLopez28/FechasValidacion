@@ -89,6 +89,7 @@ void Date::MonthtoInt(string month){
 	}
 	else {
 		cout << "Mes invalido." << endl;
+		setMonth(NULL);
 	}
 }
 
@@ -101,6 +102,7 @@ void Date::DaytoInt(string day){
 	}
 	else {
 		cout << "Dia invalido." << endl;
+		setDay(NULL);
 	}
 }
 
@@ -111,7 +113,7 @@ bool Date::isNumber(string n){
 	return true;
 }
 
-void Date::validate(){
+bool Date::validate(){
 	int year = valYear(), month = valMonth();
 	bool l_year;
 	if (month == 0 || year == 0) {
@@ -120,10 +122,10 @@ void Date::validate(){
 	else {
 		l_year = leap_year(year);
 		if (valDay(l_year, month) == true) {
-			cout << "Fecha valida." << endl;
+			return true;
 		}
-		else {
-			cout << "Fecha invalida." << endl;
+		else {		
+			return false;
 		}
 	}
 }
